@@ -54,10 +54,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      -  whoami.kdev.antosubash.com
+      -  momofamily.tplinkdns.com
       secretName: whoami-tls
   rules:
-  - host: "whoami.kdev.antosubash.com"
+  - host: "momofamily.tplinkdns.com"
     http:
       paths:
       - path: /
