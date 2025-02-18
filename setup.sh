@@ -10,6 +10,11 @@ sudo apt upgrade
 microk8s status --wait-ready
 alias kubectl='microk8s kubectl'
 kubectl cluster-info
-microk8s enable dns ingress prometheus cert-manager hostpath-storage
+
+microk8s enable dns
+microk8s enable ingress
+microk8s enable cert-manager
+microk8s enable hostpath-storage
+
 microk8s kubectl get all --all-namespaces
 microk8s kubectl get nodes
