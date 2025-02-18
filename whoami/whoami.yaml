@@ -50,8 +50,9 @@ metadata:
   name: http-ingress-whoami
   annotations:
     cert-manager.io/cluster-issuer: "lets-encrypt"
-    kubernetes.io/ingress.class: "public"
+    # kubernetes.io/ingress.class: "public" # This is deprecated
 spec:
+  ingressClassName: public
   tls:
     - hosts:
       -  momofamily.tplinkdns.com

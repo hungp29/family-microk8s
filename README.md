@@ -16,3 +16,11 @@ Run following command
 ```
 microk8s kubectl apply -f ./cert-manager/prod.yaml
 ```
+
+#### Setup `nginx`
+
+Run following command to deploy a simple `whoami` application
+
+```
+microk8s kubectl apply -f ./whoami/whoami.yaml
+```
