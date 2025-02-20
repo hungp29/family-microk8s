@@ -24,6 +24,13 @@ microk8s kubectl apply -f ./cert-manager/prod.yaml
 
 #### Setup `nginx`
 
+```
+microk8s enable ingress
+```
+
+### Deploy `whoami` application to testing
+
+
 Run following command to deploy a simple `whoami` application
 
 ```
