@@ -11,7 +11,12 @@ sudo sh setup.sh
 
 #### Setup `cert-manager`
 
-Run following command
+Run following command to enable `cert-manager` addon
+```
+microk8s enable cert-manager
+```
+
+And apply to production environment by run this command
 
 ```
 microk8s kubectl apply -f ./cert-manager/prod.yaml
@@ -23,4 +28,10 @@ Run following command to deploy a simple `whoami` application
 
 ```
 microk8s kubectl apply -f ./whoami/whoami.yaml
+```
+
+To undeploy `whoami` application, please run following command
+
+```
+microk8s kubectl delete -f ./whoami/whoami.yaml
 ```
