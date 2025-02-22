@@ -42,3 +42,18 @@ To undeploy `whoami` application, please run following command
 ```
 microk8s kubectl delete -f ./whoami/whoami.yaml
 ```
+
+### 3. Deploy `argocd`
+
+#### Install argocd
+
+```
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+Apply `ingress` for argocd
+
+```
+kubectl apply -f ./cert-manager/argocd/argocd-ingress.yaml
+```
