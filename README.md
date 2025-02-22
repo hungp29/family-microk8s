@@ -75,6 +75,8 @@ containers:
 
 Save the new configuration and exit, the pod `argocd-server` will be automatically updated
 
+#### Option 2: Using Helm Chart
+
 #### Username and password
 
 Run the following command to get the default password for the admin user
