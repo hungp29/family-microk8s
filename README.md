@@ -45,7 +45,7 @@ microk8s kubectl delete -f ./whoami/whoami.yaml
 
 ### 3. Deploy `argocd`
 
-#### Install argocd
+#### Option 1: Install argocd by apply argocd yaml file
 
 ```
 kubectl create namespace argocd
@@ -56,4 +56,18 @@ Apply `ingress` for argocd
 
 ```
 kubectl apply -f ./cert-manager/argocd/argocd-ingress.yaml
+```
+
+Edit `argocd-server` deployment resource
+
+```
+kubectl edit deployment argocd-server -n argocd
+```
+
+Add new arg `--basehref=/argocd` to container
+
+```
+- args:
+  - /usr/local/bin/argocd-server
+  - --basehref=/argocd
 ```
