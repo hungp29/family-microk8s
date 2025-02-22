@@ -43,7 +43,7 @@ To undeploy `whoami` application, please run following command
 microk8s kubectl delete -f ./whoami/whoami.yaml
 ```
 
-### 3. Deploy `argocd`
+### 3. `argocd` installation
 
 #### Option 1: Install argocd by apply argocd yaml file
 
@@ -72,3 +72,14 @@ containers:
   - /usr/local/bin/argocd-server
   - --basehref=/argocd
 ```
+
+Save the new configuration and exit, the pod `argocd-server` will be automatically updated
+
+#### Username and password
+
+Run the following command to get the default password for the admin user
+
+```
+microk8s kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode && echo
+```
+MgXVXojZldsyGnnM
