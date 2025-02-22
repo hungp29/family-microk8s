@@ -67,6 +67,7 @@ kubectl edit deployment argocd-server -n argocd
 Add new arg `--basehref=/argocd` to container
 
 ```
+containers:
 - args:
   - /usr/local/bin/argocd-server
   - --basehref=/argocd
