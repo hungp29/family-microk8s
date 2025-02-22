@@ -10,15 +10,10 @@ metadata:
     # then you need to force the nginx ingress to connect to the backend using HTTPS.
     #
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    # nginx.ingress.kubernetes.io/rewrite-target: /$2
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      rewrite ^/argo-cd/(.*) /$1 break;
-      proxy_redirect off;
-      proxy_set_header Host $host;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_set_header X-Forwarded-Host $server_name;
-      proxy_buffering off;
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # nginx.ingress.kubernetes.io/rewrite-target: /$1$2
+    # nginx.ingress.kubernetes.io/configuration-snippet: |
+    #   rewrite ^/argocd(/|$)(.*) /$2 break;
 spec:
   ingressClassName: nginx
   rules:
