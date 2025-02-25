@@ -2247,7 +2247,7 @@ server:
 
     # -- The path to Argo CD server
     # path: /argocd(/|$)(.*)
-    path: /argocd
+    path: /argocdtest
 
     # -- Ingress path type. One of `Exact`, `Prefix` or `ImplementationSpecific`
     pathType: Prefix
