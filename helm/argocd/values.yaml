@@ -2234,7 +2234,7 @@ server:
     annotations: 
       cert-manager.io/cluster-issuer: lets-encrypt
       nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-      # nginx.ingress.kubernetes.io/rewrite-target: /$2
+      nginx.ingress.kubernetes.io/rewrite-target: /$2
       # nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 
@@ -2246,11 +2246,11 @@ server:
     hostname: ""
 
     # -- The path to Argo CD server
-    # path: /argocd(/|$)(.*)
-    path: /argocd
+    path: /argocd(/|$)(.*)
+    # path: /argocd
 
     # -- Ingress path type. One of `Exact`, `Prefix` or `ImplementationSpecific`
-    pathType: ImplementationSpecific
+    pathType: Prefix
 
     # -- Enable TLS configuration for the hostname defined at `server.ingress.hostname`
     ## TLS certificate will be retrieved from a TLS secret `argocd-server-tls`
