@@ -77,6 +77,10 @@ Save the new configuration and exit, the pod `argocd-server` will be automatical
 
 #### Option 2: Using Helm Chart
 
+```
+helm upgrade --install argocd argo/argo-cd -f helm/argocd/values.yaml -n argocd
+```
+
 #### Username and password
 
 Run the following command to get the default password for the admin user
