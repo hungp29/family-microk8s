@@ -88,4 +88,24 @@ Run the following command to get the default password for the admin user
 ```
 microk8s kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 --decode && echo
 ```
-MgXVXojZldsyGnnM
+
+### 4. Configuration `argocd`
+
+#### Add global github secret
+
+```
+cat <<EOF | microk8s kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-global-secret
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: https://github.com
+  password: <your-github-token>
+  username: <your-github-username>
+EOF
+```
